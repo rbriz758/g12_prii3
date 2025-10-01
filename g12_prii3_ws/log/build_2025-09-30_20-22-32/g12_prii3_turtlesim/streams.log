@@ -1,0 +1,34 @@
+[0.835s] Invoking command in '/home/rodrigo/Proyecto_III/g12_prii3_ws/src/g12_prii3_turtlesim': PYTHONPATH=/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_turtlesim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_turtlesim/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/g12_prii3_turtlesim build --build-base /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_turtlesim/build install --record /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_turtlesim/install.log --install-scripts $base/lib/g12_prii3_turtlesim --single-version-externally-managed install_data
+[1.107s] running egg_info
+[1.108s] creating ../../build/g12_prii3_turtlesim/g12_prii3_turtlesim.egg-info
+[1.108s] writing ../../build/g12_prii3_turtlesim/g12_prii3_turtlesim.egg-info/PKG-INFO
+[1.108s] writing dependency_links to ../../build/g12_prii3_turtlesim/g12_prii3_turtlesim.egg-info/dependency_links.txt
+[1.108s] writing entry points to ../../build/g12_prii3_turtlesim/g12_prii3_turtlesim.egg-info/entry_points.txt
+[1.108s] writing requirements to ../../build/g12_prii3_turtlesim/g12_prii3_turtlesim.egg-info/requires.txt
+[1.108s] writing top-level names to ../../build/g12_prii3_turtlesim/g12_prii3_turtlesim.egg-info/top_level.txt
+[1.111s] writing manifest file '../../build/g12_prii3_turtlesim/g12_prii3_turtlesim.egg-info/SOURCES.txt'
+[1.153s] reading manifest file '../../build/g12_prii3_turtlesim/g12_prii3_turtlesim.egg-info/SOURCES.txt'
+[1.154s] writing manifest file '../../build/g12_prii3_turtlesim/g12_prii3_turtlesim.egg-info/SOURCES.txt'
+[1.154s] running build
+[1.155s] running build_py
+[1.155s] creating /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_turtlesim/build
+[1.155s] creating /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_turtlesim/build/lib
+[1.155s] creating /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_turtlesim/build/lib/g12_prii3_turtlesim
+[1.155s] copying g12_prii3_turtlesim/__init__.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_turtlesim/build/lib/g12_prii3_turtlesim
+[1.155s] copying g12_prii3_turtlesim/mover_tortuga.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_turtlesim/build/lib/g12_prii3_turtlesim
+[1.155s] running install
+[1.156s] running install_lib
+[1.157s] creating /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_turtlesim/lib/python3.8/site-packages/g12_prii3_turtlesim
+[1.157s] copying /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_turtlesim/build/lib/g12_prii3_turtlesim/__init__.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_turtlesim/lib/python3.8/site-packages/g12_prii3_turtlesim
+[1.157s] copying /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_turtlesim/build/lib/g12_prii3_turtlesim/mover_tortuga.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_turtlesim/lib/python3.8/site-packages/g12_prii3_turtlesim
+[1.158s] byte-compiling /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_turtlesim/lib/python3.8/site-packages/g12_prii3_turtlesim/__init__.py to __init__.cpython-38.pyc
+[1.159s] byte-compiling /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_turtlesim/lib/python3.8/site-packages/g12_prii3_turtlesim/mover_tortuga.py to mover_tortuga.cpython-38.pyc
+[1.160s] running install_data
+[1.160s] creating /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_turtlesim/share/ament_index
+[1.160s] creating /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_turtlesim/share/ament_index/resource_index
+[1.160s] creating /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_turtlesim/share/ament_index/resource_index/packages
+[1.161s] copying resource/g12_prii3_turtlesim -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_turtlesim/share/ament_index/resource_index/packages
+[1.161s] copying package.xml -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_turtlesim/share/g12_prii3_turtlesim
+[1.161s] creating /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_turtlesim/share/g12_prii3_turtlesim/launch
+[1.161s] error: can't copy 'launch/mover_tortuga.launch.py': doesn't exist or not a regular file
+[1.180s] Invoked command in '/home/rodrigo/Proyecto_III/g12_prii3_ws/src/g12_prii3_turtlesim' returned '1': PYTHONPATH=/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_turtlesim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_turtlesim/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/g12_prii3_turtlesim build --build-base /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_turtlesim/build install --record /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_turtlesim/install.log --install-scripts $base/lib/g12_prii3_turtlesim --single-version-externally-managed install_data

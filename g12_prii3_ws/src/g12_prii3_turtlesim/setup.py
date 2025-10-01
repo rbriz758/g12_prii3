@@ -13,13 +13,14 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='rodrigo',
-    maintainer_email='rbriram@upv.edu.es',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    maintainer='Rodrigo',
+    maintainer_email='tu_email@dominio.com',
+    description='Control de turtlesim para el grupo 12',
+    license='MIT',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'mover_tortuga = g12_prii3_turtlesim.mover_tortuga:main',
         ],
     },
 )
