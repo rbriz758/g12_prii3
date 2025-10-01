@@ -40,7 +40,7 @@ class MoverTortuga(Node):
 
         elif self.state == 'teleport_inicio_1':
             tp_req = TeleportAbsolute.Request()
-            tp_req.x = 2.5
+            tp_req.x = 3.5  # Posición ajustada del "1"
             tp_req.y = 8.0
             tp_req.theta = 0.0
             self.teleport_cli.call_async(tp_req)
