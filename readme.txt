@@ -16,7 +16,7 @@ Clonar el repositorio:
 
     2.Entrar al workspace.
 
-    cd g12_prii3/g12_prii3_ws
+    cd g12_prii3_ws
 
     3.Compilar el workspace con colcon.
 
@@ -27,4 +27,5 @@ Clonar el repositorio:
 
     5. Lanzar el nodo con el launch file:
 
-    ros2 launch g12_prii3_turtlesim mover_tortuga.launch.py
+    ros2 launch src/g12_prii3_turtlesim/launch/mover_tortuga.launch.py
+
