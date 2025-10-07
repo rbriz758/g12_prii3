@@ -8,7 +8,7 @@ Haber configurado las variables de entorno de ROS 2.
 
 Instalación y uso:
 
-Clonar el repositorio:
+    Clonar el repositorio:
 
     1.Clonar el repositorio.
 
@@ -27,5 +27,14 @@ Clonar el repositorio:
 
     5. Lanzar el nodo con el launch file:
 
-    ros2 launch src/g12_prii3_turtlesim/launch/mover_tortuga.launch.py
+    ros2 launch g12_prii3_turtlesim mover_tortuga.launch.py
+
+    6.Servicios Parar/Reunudar/Reiniciar:
+
+    Parar: ros2 service call /detener_dibujo std_srvs/srv/Trigger {}
+
+    Reunudar: ros2 service call /reanudar_dibujo std_srvs/srv/Trigger {}
+
+    Reiniciar: ros2 service call /reiniciar_dibujo std_srvs/srv/Trigger {}
+
 

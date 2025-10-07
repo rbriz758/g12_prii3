@@ -8,14 +8,16 @@ from std_srvs.srv import Trigger, Empty
 class MoverTortuga(Node):
     def __init__(self):
         super().__init__('mover_tortuga')
+
+        # --- Creación de la tortuga (nodo principal) ---
         self.publisher_ = self.create_publisher(Twist, 'turtle1/cmd_vel', 10)
         self.pose_subscriber = self.create_subscription(Pose, 'turtle1/pose', self.pose_callback, 10)
 
-        # Servicios internos
+       
         self.teleport_cli = self.create_client(TeleportAbsolute, 'turtle1/teleport_absolute')
         self.setpen_cli = self.create_client(SetPen, 'turtle1/set_pen')
-        self.clear_cli = self.create_client(Empty, 'clear')  # Nuevo cliente para clear
-        
+        self.clear_cli = self.create_client(Empty, 'clear')
+
         while not self.teleport_cli.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Esperando servicio teleport_absolute...')
         while not self.setpen_cli.wait_for_service(timeout_sec=1.0):
@@ -23,23 +25,23 @@ class MoverTortuga(Node):
         while not self.clear_cli.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Esperando servicio clear...')
 
-        # Servicios externos
+        # --- Declaración de los servicios de parar / reanudar / reiniciar ---
         self.detener_srv = self.create_service(Trigger, 'detener_dibujo', self.detener_callback)
         self.reanudar_srv = self.create_service(Trigger, 'reanudar_dibujo', self.reanudar_callback)
         self.reiniciar_srv = self.create_service(Trigger, 'reiniciar_dibujo', self.reiniciar_callback)
 
+        
         self.pose = None
         self.timer = self.create_timer(0.1, self.timer_callback)
         self.state = 'levantar_lapiz_inicio'
         self.segmento = 0
-
-        # Control de pausa y reinicio
         self.pausado = False
         self.estado_guardado = None
 
     def pose_callback(self, msg):
         self.pose = msg
 
+    # --- Aquí servicio para detener ---
     def detener_callback(self, request, response):
         self.pausado = True
         self.estado_guardado = self.state
@@ -47,6 +49,7 @@ class MoverTortuga(Node):
         response.message = 'Dibujo detenido.'
         return response
 
+    # --- Aquí servicio reanudar ---
     def reanudar_callback(self, request, response):
         if self.estado_guardado:
             self.state = self.estado_guardado
@@ -55,24 +58,24 @@ class MoverTortuga(Node):
         response.message = 'Dibujo reanudado.'
         return response
 
+    # --- Aquí servicio reiniciar ---
     def reiniciar_callback(self, request, response):
         self.pausado = False
         self.state = 'levantar_lapiz_inicio'
         self.segmento = 0
 
-        # LIMPIAR EL RASTRO DE LA TORTUGA
+        # Limpiar pantalla
         clear_req = Empty.Request()
         self.clear_cli.call_async(clear_req)
-        self.get_logger().info('Pantalla limpiada')
 
-        # Teletransportar a posición inicial
+        # Volver a la posición inicial
         tp_req = TeleportAbsolute.Request()
         tp_req.x = 3.5
         tp_req.y = 8.0
         tp_req.theta = 0.0
         self.teleport_cli.call_async(tp_req)
 
-        # Levantar lápiz para evitar trazos
+        # Levantar lápiz
         pen_req = SetPen.Request()
         pen_req.off = True
         self.setpen_cli.call_async(pen_req)
@@ -87,6 +90,9 @@ class MoverTortuga(Node):
 
         twist = Twist()
 
+        # ============================================================
+        # === Aquí es donde se dibuja el número 1 ===
+        
         if self.state == 'levantar_lapiz_inicio':
             pen_req = SetPen.Request()
             pen_req.off = True
@@ -118,6 +124,9 @@ class MoverTortuga(Node):
                 twist.linear.y = 0.0
                 self.state = 'levantar_lapiz'
 
+        # ============================================================
+        # === Aquí se teleporta del número 1 al número 2 ===
+        
         elif self.state == 'levantar_lapiz':
             pen_req = SetPen.Request()
             pen_req.off = True
@@ -132,6 +141,9 @@ class MoverTortuga(Node):
             self.teleport_cli.call_async(tp_req)
             self.state = 'bajar_lapiz_2'
 
+        # ============================================================
+        # === Aquí se dibuja el número 2 ===
+        
         elif self.state == 'bajar_lapiz_2':
             pen_req = SetPen.Request()
             pen_req.off = False
@@ -174,16 +186,18 @@ class MoverTortuga(Node):
                 else:
                     twist.linear.x = 0.0
                     self.state = 'finalizado'
+                    # Mensaje de confirmacion que el numero 1 y 2 se han dibujado
                     self.get_logger().info('Número 1 y 2 dibujados correctamente')
 
         self.publisher_.publish(twist)
 
+
 def main(args=None):
     rclpy.init(args=args)
-    nodo = MoverTortuga()
-    rclpy.spin(nodo)
-    nodo.destroy_node()
-    rclpy.shutdown()
+    nodo = MoverTortuga()  # Creación de la tortuga
+    rclpy.spin(nodo)       
+    nodo.destroy_node()    
+    rclpy.shutdown()       # Cierra ROS 2
 
 if __name__ == '__main__':
     main()
