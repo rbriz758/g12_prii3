@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/PKG-INFO
+../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/SOURCES.txt
+../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/dependency_links.txt
+../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/entry_points.txt
+../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/requires.txt
+../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/top_level.txt
+../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/zip-safe
+g12_prii3_move_jetbot/__init__.py
+g12_prii3_move_jetbot/draw_number.py
+resource/g12_prii3_move_jetbot
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

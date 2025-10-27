@@ -1,0 +1,36 @@
+[2.657s] Invoking command in '/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_move_jetbot': PYTHONPATH=/home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g12_prii3/install/g12_prii3_move_jetbot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/g12_prii3_move_jetbot build --build-base /home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/build install --record /home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/install.log --install-scripts $base/lib/g12_prii3_move_jetbot --single-version-externally-managed install_data
+[3.214s] running egg_info
+[3.215s] creating ../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info
+[3.215s] writing ../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/PKG-INFO
+[3.216s] writing dependency_links to ../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/dependency_links.txt
+[3.216s] writing entry points to ../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/entry_points.txt
+[3.216s] writing requirements to ../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/requires.txt
+[3.217s] writing top-level names to ../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/top_level.txt
+[3.220s] writing manifest file '../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/SOURCES.txt'
+[3.305s] reading manifest file '../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/SOURCES.txt'
+[3.307s] writing manifest file '../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info/SOURCES.txt'
+[3.308s] running build
+[3.308s] running build_py
+[3.309s] creating /home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/build
+[3.309s] creating /home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/build/lib
+[3.309s] creating /home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/build/lib/g12_prii3_move_jetbot
+[3.309s] copying g12_prii3_move_jetbot/draw_number.py -> /home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/build/lib/g12_prii3_move_jetbot
+[3.310s] copying g12_prii3_move_jetbot/__init__.py -> /home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/build/lib/g12_prii3_move_jetbot
+[3.310s] running install
+[3.312s] running install_lib
+[3.313s] creating /home/rodrigo/Proyecto_III/g12_prii3/install/g12_prii3_move_jetbot/lib/python3.8/site-packages/g12_prii3_move_jetbot
+[3.314s] copying /home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/build/lib/g12_prii3_move_jetbot/draw_number.py -> /home/rodrigo/Proyecto_III/g12_prii3/install/g12_prii3_move_jetbot/lib/python3.8/site-packages/g12_prii3_move_jetbot
+[3.314s] copying /home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/build/lib/g12_prii3_move_jetbot/__init__.py -> /home/rodrigo/Proyecto_III/g12_prii3/install/g12_prii3_move_jetbot/lib/python3.8/site-packages/g12_prii3_move_jetbot
+[3.315s] byte-compiling /home/rodrigo/Proyecto_III/g12_prii3/install/g12_prii3_move_jetbot/lib/python3.8/site-packages/g12_prii3_move_jetbot/draw_number.py to draw_number.cpython-38.pyc
+[3.321s] byte-compiling /home/rodrigo/Proyecto_III/g12_prii3/install/g12_prii3_move_jetbot/lib/python3.8/site-packages/g12_prii3_move_jetbot/__init__.py to __init__.cpython-38.pyc
+[3.321s] running install_data
+[3.322s] creating /home/rodrigo/Proyecto_III/g12_prii3/install/g12_prii3_move_jetbot/share/ament_index
+[3.322s] creating /home/rodrigo/Proyecto_III/g12_prii3/install/g12_prii3_move_jetbot/share/ament_index/resource_index
+[3.322s] creating /home/rodrigo/Proyecto_III/g12_prii3/install/g12_prii3_move_jetbot/share/ament_index/resource_index/packages
+[3.322s] copying resource/g12_prii3_move_jetbot -> /home/rodrigo/Proyecto_III/g12_prii3/install/g12_prii3_move_jetbot/share/ament_index/resource_index/packages
+[3.323s] copying package.xml -> /home/rodrigo/Proyecto_III/g12_prii3/install/g12_prii3_move_jetbot/share/g12_prii3_move_jetbot
+[3.323s] running install_egg_info
+[3.326s] Copying ../../../build/g12_prii3_move_jetbot/g12_prii3_move_jetbot.egg-info to /home/rodrigo/Proyecto_III/g12_prii3/install/g12_prii3_move_jetbot/lib/python3.8/site-packages/g12_prii3_move_jetbot-0.0.0-py3.8.egg-info
+[3.329s] running install_scripts
+[3.372s] writing list of installed files to '/home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/install.log'
+[3.424s] Invoked command in '/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_move_jetbot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g12_prii3/install/g12_prii3_move_jetbot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/g12_prii3_move_jetbot build --build-base /home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/build install --record /home/rodrigo/Proyecto_III/g12_prii3/build/g12_prii3_move_jetbot/install.log --install-scripts $base/lib/g12_prii3_move_jetbot --single-version-externally-managed install_data
