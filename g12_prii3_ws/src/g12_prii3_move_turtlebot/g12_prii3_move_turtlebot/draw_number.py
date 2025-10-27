@@ -10,15 +10,9 @@ from rclpy.node import Node
 from std_srvs.srv import Trigger
 
 
-class DrawNumberJetBot(Node):
+class DrawNumberGazebo(Node):
     def __init__(self) -> None:
-        super().__init__('draw_number_jetbot')
-
-        # Parámetros para ajustar el comportamiento en el robot real.
-        self.declare_parameter('scale', 1.2)
-        self.declare_parameter('linear_limit', 0.22)
-        self.declare_parameter('angular_limit', 1.8)
-        self.declare_parameter('path_separation', 0.38)
+        super().__init__('draw_number_gazebo')
 
         self.cmd_pub = self.create_publisher(Twist, '/cmd_vel', 10)
         self.create_subscription(Odometry, '/odom', self.odom_callback, 10)
@@ -36,26 +30,25 @@ class DrawNumberJetBot(Node):
         self.paused = False
         self.finished = False
 
-        # Ganancias y umbrales ajustados al comportamiento típico de JetBot.
-        self.k_linear = 0.9
-        self.k_angular = 2.6
-        self.max_linear_default = float(self.get_parameter('linear_limit').value)
-        self.max_angular = float(self.get_parameter('angular_limit').value)
-        self.max_linear_close = 0.14
-        self.min_linear = 0.05
-        self.distance_tolerance = 0.025
-        self.heading_threshold = 0.4
+        # Gains and limits tuned for TurtleBot3 in Gazebo
+        self.k_linear = 1.1
+        self.k_angular = 3.0
+        self.max_linear = 0.22
+        self.max_linear_close = 0.12
+        self.min_linear = 0.06
+        self.max_angular = 2.2
+        self.distance_tolerance = 0.03
+        self.heading_threshold = 0.35
 
-        # Trayectoria base del número "12" con separación configurable.
-        scale = float(self.get_parameter('scale').value)
-        separation = float(self.get_parameter('path_separation').value)
+        # Points relative to the starting pose that outline the number "12"
+        scale = 1.6  # Escala global para agrandar el número en Gazebo
         base_path: List[Tuple[float, float]] = [
-            (0.0, 1.0),            # Trazo vertical del "1"
-            (separation, 1.0),     # Transición hacia el "2"
-            (separation + 0.65, 1.0),  # Segmento superior del "2"
-            (separation + 0.65, 0.55), # Diagonal descendente
-            (separation, 0.12),        # Base izquierda del "2"
-            (separation + 0.65, 0.12), # Segmento inferior del "2"
+            (0.0, 1.0),   # Trazo vertical del "1"
+            (0.4, 1.0),   # Transición hacia el "2"
+            (1.0, 1.0),   # Segmento superior del "2"
+            (1.0, 0.55),  # Inicio de la diagonal descendente
+            (0.35, 0.15), # Base izquierda del "2"
+            (1.0, 0.15),  # Segmento inferior del "2"
         ]
         self.path_rel: List[Tuple[float, float]] = [
             (x * scale, y * scale) for (x, y) in base_path
@@ -112,12 +105,12 @@ class DrawNumberJetBot(Node):
         linear_speed = 0.0
         if abs(heading_error) < self.heading_threshold:
             raw_linear = self.k_linear * distance
-            if distance < 0.12:
+            if distance < 0.15:
                 raw_linear = min(raw_linear, self.max_linear_close)
             else:
-                raw_linear = min(raw_linear, self.max_linear_default)
+                raw_linear = min(raw_linear, self.max_linear)
 
-            if distance > self.distance_tolerance * 2.5:
+            if distance > self.distance_tolerance * 2:
                 linear_speed = max(raw_linear, self.min_linear)
             else:
                 linear_speed = min(raw_linear, self.max_linear_close)
@@ -162,7 +155,8 @@ class DrawNumberJetBot(Node):
         self.get_logger().info('Número 12 completado correctamente.')
 
     def publish_stop(self) -> None:
-        self.cmd_pub.publish(Twist())
+        twist = Twist()
+        self.cmd_pub.publish(twist)
 
     def transform_to_world(self, point: Tuple[float, float]) -> Tuple[float, float]:
         if self.initial_pose is None:
@@ -195,7 +189,7 @@ class DrawNumberJetBot(Node):
 
 def main(args: Optional[List[str]] = None) -> None:
     rclpy.init(args=args)
-    node = DrawNumberJetBot()
+    node = DrawNumberGazebo()
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
@@ -208,4 +202,3 @@ def main(args: Optional[List[str]] = None) -> None:
 
 if __name__ == '__main__':
     main()
-
