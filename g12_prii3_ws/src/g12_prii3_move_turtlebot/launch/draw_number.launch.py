@@ -8,5 +8,11 @@ def generate_launch_description():
             executable='draw_number',
             name='draw_number',
             output='screen'
+        ),
+        Node(
+            package='g12_prii3_move_turtlebot',
+            executable='collision_avoidance',
+            name='collision_avoidance',
+            output='screen'
         )
     ])
