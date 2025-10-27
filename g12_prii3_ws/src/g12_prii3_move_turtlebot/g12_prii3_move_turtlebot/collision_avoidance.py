@@ -10,6 +10,7 @@ from rclpy.node import Node
 from rclpy.task import Future
 from sensor_msgs.msg import LaserScan
 from std_srvs.srv import Trigger
+from rcl_interfaces.msg import SetParametersResult
 
 
 class CollisionAvoidanceSupervisor(Node):
@@ -21,9 +22,11 @@ class CollisionAvoidanceSupervisor(Node):
         self.declare_parameter('stop_publish_rate', 10.0)
         self.declare_parameter('detener_service', 'detener_dibujo')
         self.declare_parameter('reanudar_service', 'reanudar_dibujo')
+        self.declare_parameter('enable_stop', True)
 
         self.safe_distance = float(self.get_parameter('safe_distance').value)
         self.forward_angle = float(self.get_parameter('forward_angle').value)
+        self.enable_stop = bool(self.get_parameter('enable_stop').value)
 
         stop_rate = float(self.get_parameter('stop_publish_rate').value)
         stop_period = 1.0 / stop_rate if stop_rate > 0 else 0.1
@@ -42,6 +45,8 @@ class CollisionAvoidanceSupervisor(Node):
         self.obstacle_detected = False
         self.paused_by_collision = False
         self.closest_obstacle: Optional[float] = None
+
+        self.add_on_set_parameters_callback(self._on_parameters_changed)
 
         for client, label in ((self.detener_client, detener_name), (self.reanudar_client, reanudar_name)):
             while not client.wait_for_service(timeout_sec=1.0):
@@ -62,17 +67,28 @@ class CollisionAvoidanceSupervisor(Node):
         if self.obstacle_detected and not previous_state:
             if min_distance is not None:
                 self.get_logger().warn(
-                    f'Obstáculo detectado a {min_distance:.2f} m. Solicitando parada del dibujo.'
+                    f'Obstáculo detectado a {min_distance:.2f} m.'
                 )
             else:
-                self.get_logger().warn('Obstáculo detectado. Solicitando parada del dibujo.')
-            self.pause_draw()
+                self.get_logger().warn('Obstáculo detectado.')
+
+            if self.enable_stop:
+                self.get_logger().info('Solicitando parada del dibujo por seguridad.')
+                self.pause_draw()
+            else:
+                self.get_logger().debug('Modo observador: no se envían comandos de parada.')
         elif not self.obstacle_detected and previous_state:
-            self.get_logger().info('Trayectoria despejada. Solicitando reanudación del dibujo.')
-            self.resume_draw()
+            if self.enable_stop:
+                self.get_logger().info('Trayectoria despejada. Solicitando reanudación del dibujo.')
+                self.resume_draw()
+            else:
+                self.get_logger().debug('Trayectoria despejada (modo observador).')
 
     def pause_draw(self) -> None:
         if self.paused_by_collision:
+            return
+
+        if not self.enable_stop:
             return
 
         request = Trigger.Request()
@@ -85,18 +101,22 @@ class CollisionAvoidanceSupervisor(Node):
         if not self.paused_by_collision:
             return
 
+        if not self.enable_stop:
+            return
+
         request = Trigger.Request()
         future = self.reanudar_client.call_async(request)
         future.add_done_callback(partial(self.handle_service_response, 'reanudar'))
         self.paused_by_collision = False
 
     def publish_stop_if_needed(self) -> None:
-        if self.obstacle_detected:
+        if self.obstacle_detected and self.enable_stop:
             self.publish_stop()
 
     def publish_stop(self) -> None:
-        twist = Twist()
-        self.cmd_pub.publish(twist)
+        if self.enable_stop:
+            twist = Twist()
+            self.cmd_pub.publish(twist)
 
     def handle_service_response(self, action: str, future: Future) -> None:
         try:
@@ -123,6 +143,16 @@ class CollisionAvoidanceSupervisor(Node):
             angle += scan.angle_increment
 
         return min(relevant) if relevant else None
+
+    def _on_parameters_changed(self, params) -> SetParametersResult:
+        for param in params:
+            if param.name == 'enable_stop':
+                self.enable_stop = bool(param.value)
+                if not self.enable_stop:
+                    self.get_logger().info('Modo observador activado: no se solicitará parada automática.')
+                else:
+                    self.get_logger().info('Modo supervisor activado: se solicitarán paradas ante obstáculos.')
+        return SetParametersResult(successful=True)
 
 
 def main(args=None) -> None:

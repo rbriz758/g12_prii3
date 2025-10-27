@@ -25,6 +25,7 @@ setup(
         'console_scripts': [
             'draw_number = g12_prii3_move_turtlebot.draw_number:main',
             'collision_avoidance = g12_prii3_move_turtlebot.collision_avoidance:main',
+            'obstacle_avoidance = g12_prii3_move_turtlebot.obstacle_avoidance:main',
         ],
     },
 )

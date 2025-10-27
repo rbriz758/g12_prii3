@@ -13,6 +13,13 @@ def generate_launch_description():
             package='g12_prii3_move_turtlebot',
             executable='collision_avoidance',
             name='collision_avoidance',
+            output='screen',
+            parameters=[{'enable_stop': False}]
+        ),
+        Node(
+            package='g12_prii3_move_turtlebot',
+            executable='obstacle_avoidance',
+            name='obstacle_avoidance',
             output='screen'
         )
     ])
