@@ -1,0 +1,24 @@
+[0.828s] Invoking command in '/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot': PYTHONPATH=/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build --no-deps symlink_data --force
+[1.172s] running develop
+[1.351s] running egg_info
+[1.351s] writing g12_prii3_move_turtlebot.egg-info/PKG-INFO
+[1.351s] writing dependency_links to g12_prii3_move_turtlebot.egg-info/dependency_links.txt
+[1.352s] writing entry points to g12_prii3_move_turtlebot.egg-info/entry_points.txt
+[1.352s] writing requirements to g12_prii3_move_turtlebot.egg-info/requires.txt
+[1.352s] writing top-level names to g12_prii3_move_turtlebot.egg-info/top_level.txt
+[1.394s] reading manifest file 'g12_prii3_move_turtlebot.egg-info/SOURCES.txt'
+[1.395s] writing manifest file 'g12_prii3_move_turtlebot.egg-info/SOURCES.txt'
+[1.442s] running build_ext
+[1.442s] Creating /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12-prii3-move-turtlebot.egg-link (link to .)
+[1.443s] Installing collision_avoidance script to /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/g12_prii3_move_turtlebot
+[1.443s] Installing draw_number script to /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/g12_prii3_move_turtlebot
+[1.443s] Installing obstacle_avoidance script to /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/g12_prii3_move_turtlebot
+[1.444s] 
+[1.444s] Installed /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot
+[1.444s] running symlink_data
+[1.444s] symbolically linking /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/resource/g12_prii3_move_turtlebot -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/ament_index/resource_index/packages
+[1.444s] symbolically linking /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/package.xml -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/g12_prii3_move_turtlebot
+[1.444s] symbolically linking /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/launch/draw_and_collision.launch.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/g12_prii3_move_turtlebot/launch
+[1.445s] symbolically linking /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/launch/draw_and_obstacle.launch.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/g12_prii3_move_turtlebot/launch
+[1.445s] symbolically linking /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/launch/draw_number_only.launch.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/g12_prii3_move_turtlebot/launch
+[1.472s] Invoked command in '/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build --no-deps symlink_data --force

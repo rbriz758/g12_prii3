@@ -28,7 +28,7 @@ def generate_launch_description():
         executable='collision_avoidance',
         name='collision_avoidance',
         output='screen',
-        parameters=[{'enable_stop': False}]
+        parameters=[{'enable_stop': True}]
     )
 
     return LaunchDescription([

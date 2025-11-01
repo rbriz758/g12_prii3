@@ -1,0 +1,43 @@
+running develop
+Removing /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12-prii3-move-turtlebot.egg-link (link to .)
+running egg_info
+writing ../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/PKG-INFO
+writing dependency_links to ../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/dependency_links.txt
+writing entry points to ../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/entry_points.txt
+writing requirements to ../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/requires.txt
+writing top-level names to ../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/top_level.txt
+reading manifest file '../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/SOURCES.txt'
+writing manifest file '../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build
+creating /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib
+creating /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot
+copying g12_prii3_move_turtlebot/draw_number.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot
+copying g12_prii3_move_turtlebot/__init__.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot
+copying g12_prii3_move_turtlebot/collision_avoidance.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot
+copying g12_prii3_move_turtlebot/obstacle_avoidance.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot
+running install
+running install_lib
+creating /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot
+copying /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot/draw_number.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot
+copying /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot/__init__.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot
+copying /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot/collision_avoidance.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot
+copying /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot/obstacle_avoidance.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot
+byte-compiling /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot/draw_number.py to draw_number.cpython-38.pyc
+byte-compiling /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot/collision_avoidance.py to collision_avoidance.cpython-38.pyc
+byte-compiling /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot/obstacle_avoidance.py to obstacle_avoidance.cpython-38.pyc
+running install_data
+copying resource/g12_prii3_move_turtlebot -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/ament_index/resource_index/packages
+copying package.xml -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/g12_prii3_move_turtlebot
+copying launch/draw_and_collision.launch.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/g12_prii3_move_turtlebot/launch
+copying launch/draw_and_obstacle.launch.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/g12_prii3_move_turtlebot/launch
+copying launch/draw_number_only.launch.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/g12_prii3_move_turtlebot/launch
+running install_egg_info
+Copying ../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info to /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot-0.0.0-py3.8.egg-info
+running install_scripts
+Installing collision_avoidance script to /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/g12_prii3_move_turtlebot
+Installing draw_number script to /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/g12_prii3_move_turtlebot
+Installing obstacle_avoidance script to /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/g12_prii3_move_turtlebot
+writing list of installed files to '/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/install.log'

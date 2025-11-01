@@ -1,0 +1,46 @@
+[1.470s] Invoking command in '/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot': PYTHONPATH=/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build
+[1.788s] running develop
+[1.984s] Removing /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12-prii3-move-turtlebot.egg-link (link to .)
+[2.001s] Invoked command in '/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build
+[2.003s] Invoking command in '/home/rodrigo/Proyecto_III/g12_prii3_ws/src/g12_prii3_move_turtlebot': PYTHONPATH=/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/g12_prii3_move_turtlebot build --build-base /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build install --record /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/install.log --install-scripts $base/lib/g12_prii3_move_turtlebot --single-version-externally-managed install_data --force
+[2.311s] running egg_info
+[2.312s] writing ../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/PKG-INFO
+[2.313s] writing dependency_links to ../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/dependency_links.txt
+[2.313s] writing entry points to ../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/entry_points.txt
+[2.314s] writing requirements to ../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/requires.txt
+[2.314s] writing top-level names to ../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/top_level.txt
+[2.362s] reading manifest file '../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/SOURCES.txt'
+[2.363s] writing manifest file '../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info/SOURCES.txt'
+[2.364s] running build
+[2.364s] running build_py
+[2.364s] creating /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build
+[2.364s] creating /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib
+[2.364s] creating /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot
+[2.365s] copying g12_prii3_move_turtlebot/draw_number.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot
+[2.365s] copying g12_prii3_move_turtlebot/__init__.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot
+[2.365s] copying g12_prii3_move_turtlebot/collision_avoidance.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot
+[2.365s] copying g12_prii3_move_turtlebot/obstacle_avoidance.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot
+[2.365s] running install
+[2.366s] running install_lib
+[2.367s] creating /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot
+[2.367s] copying /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot/draw_number.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot
+[2.367s] copying /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot/__init__.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot
+[2.367s] copying /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot/collision_avoidance.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot
+[2.367s] copying /home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/build/lib/g12_prii3_move_turtlebot/obstacle_avoidance.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot
+[2.368s] byte-compiling /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot/draw_number.py to draw_number.cpython-38.pyc
+[2.371s] byte-compiling /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot/__init__.py to __init__.cpython-38.pyc
+[2.371s] byte-compiling /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot/collision_avoidance.py to collision_avoidance.cpython-38.pyc
+[2.372s] byte-compiling /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot/obstacle_avoidance.py to obstacle_avoidance.cpython-38.pyc
+[2.374s] running install_data
+[2.374s] copying resource/g12_prii3_move_turtlebot -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/ament_index/resource_index/packages
+[2.375s] copying package.xml -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/g12_prii3_move_turtlebot
+[2.375s] copying launch/draw_and_collision.launch.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/g12_prii3_move_turtlebot/launch
+[2.375s] copying launch/draw_and_obstacle.launch.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/g12_prii3_move_turtlebot/launch
+[2.375s] copying launch/draw_number_only.launch.py -> /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/share/g12_prii3_move_turtlebot/launch
+[2.375s] running install_egg_info
+[2.377s] Copying ../../build/g12_prii3_move_turtlebot/g12_prii3_move_turtlebot.egg-info to /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/python3.8/site-packages/g12_prii3_move_turtlebot-0.0.0-py3.8.egg-info
+[2.378s] running install_scripts
+[2.400s] Installing collision_avoidance script to /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/g12_prii3_move_turtlebot
+[2.400s] Installing draw_number script to /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/g12_prii3_move_turtlebot
+[2.400s] Installing obstacle_avoidance script to /home/rodrigo/Proyecto_III/g12_prii3_ws/install/g12_prii3_move_turtlebot/lib/g12_prii3_move_turtlebot
+[2.401s] writing list of installed files to '/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/install.log'
