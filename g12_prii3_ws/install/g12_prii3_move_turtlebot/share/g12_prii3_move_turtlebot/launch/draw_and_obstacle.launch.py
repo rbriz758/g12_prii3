@@ -1,1 +1,0 @@
-/home/rodrigo/Proyecto_III/g12_prii3_ws/build/g12_prii3_move_turtlebot/launch/draw_and_obstacle.launch.py
