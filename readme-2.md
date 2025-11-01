@@ -22,6 +22,12 @@ Paquete enfocado a TurtleBot3 en Gazebo. Incluye 3 launch files relevantes:
 
 Cómo ejecutar:
 
+
+- Predefinir dispositivo en Gazebo
+
+export TURTLEBOT3_MODEL=burge
+
+
 - Lanzar solo el trazado en Gazebo
 
 ```bash
