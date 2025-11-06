@@ -1,3 +1,0 @@
-[console_scripts]
-mover_tortuga = g12_prii3_turtlesim.mover_tortuga:main
-
