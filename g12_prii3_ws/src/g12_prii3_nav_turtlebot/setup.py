@@ -1,4 +1,6 @@
 from setuptools import setup
+import os
+from glob import glob
 
 package_name = 'g12_prii3_nav_turtlebot'
 
@@ -10,6 +12,12 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        
+        # LÍNEA AÑADIDA: Copia todos los ficheros .world de la carpeta worlds/
+        (os.path.join('share', package_name, 'worlds'), glob('worlds/*.world')),
+        
+        # LÍNEA MODIFICADA: Asegura que todos los ficheros .py de la carpeta launch/ se copien
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
