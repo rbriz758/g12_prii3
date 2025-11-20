@@ -28,10 +28,7 @@ def generate_launch_description():
     world_file_arg = LaunchConfiguration('world_file', default='f1f3.world')
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     
-    # Definir las posiciones usando LaunchConfiguration
-    x_val = LaunchConfiguration('spawn_x')
-    y_val = LaunchConfiguration('spawn_y')
-    z_val = LaunchConfiguration('spawn_z')
+
 
     # Ruta al archivo del mundo
     world = PathJoinSubstitution([
@@ -60,20 +57,7 @@ def generate_launch_description():
         launch_arguments={'use_sim_time': use_sim_time}.items()
     )
 
-    # Spawn del robot en Gazebo
-    # Se usa el nombre 'turtlebot3_waffle' para la entidad
-    spawn_entity = Node(
-        package='gazebo_ros',
-        executable='spawn_entity.py',
-        arguments=[
-            '-topic', 'robot_description',
-            '-entity', 'turtlebot3_waffle', # Nombre correcto para el Sprint
-            '-x', x_val,
-            '-y', y_val,
-            '-z', z_val
-        ],
-        output='screen'
-    )
+
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -86,23 +70,9 @@ def generate_launch_description():
             default_value='f1f3.world', 
             description='Name of the world file located in the package worlds/ directory'),
 
-        # Argumentos de posición con valores por defecto seguros
-        DeclareLaunchArgument(
-            'spawn_x',
-            default_value='0.0', # Posición X inicial
-            description='X position where the robot will be spawned'),
 
-        DeclareLaunchArgument(
-            'spawn_y',
-            default_value='0.0', # Posición Y inicial
-            description='Y position where the robot will be spawned'),
-
-        DeclareLaunchArgument(
-            'spawn_z',
-            default_value='0.15', # Altura segura para evitar colisión con el suelo
-            description='Z (height) for spawning the robot'),
 
         gazebo,
         robot_state_publisher,
-        spawn_entity,
+
     ])
