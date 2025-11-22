@@ -73,6 +73,17 @@ def generate_launch_description():
 
 
         gazebo,
-        robot_state_publisher,
+    robot_state_publisher,
+    
+    Node(
+        package='gazebo_ros',
+        executable='spawn_entity.py',
+        arguments=['-database', 'turtlebot3_waffle',
+                   '-entity', 'turtlebot3_waffle',
+                   '-x', '-9.0',
+                   '-y', '-4.0',
+                   '-z', '0.01'],
+        output='screen'
+    ),
 
     ])
