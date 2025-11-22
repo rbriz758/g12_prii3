@@ -12,23 +12,28 @@ def generate_launch_description():
     pkg_turtlebot3_gazebo = get_package_share_directory('turtlebot3_gazebo')
     pkg_name = 'g12_prii3_nav_turtlebot' # Tu paquete
 
-    # Configurar modelo por defecto a WAFFLE (Requisito Sprint 3)
+    # Configurar modelo por defecto a WAFFLE
     if 'TURTLEBOT3_MODEL' not in os.environ:
         os.environ['TURTLEBOT3_MODEL'] = 'waffle'
 
-    # Añadir modelos de turtlebot3 al path de Gazebo
-    model_path = os.path.join(pkg_turtlebot3_gazebo, 'models')
+    # --- EL ÚNICO CAMBIO: AÑADIR TUS MODELOS (ARUCOS) AL PATH ---
+    turtlebot_models = os.path.join(pkg_turtlebot3_gazebo, 'models')
+    
+    # Ruta a TUS modelos dentro de tu paquete
+    my_pkg_path = get_package_share_directory(pkg_name)
+    my_models_path = os.path.join(my_pkg_path, 'models')
+
+    # Añadir al GAZEBO_MODEL_PATH
     if 'GAZEBO_MODEL_PATH' in os.environ:
-        os.environ['GAZEBO_MODEL_PATH'] += ':' + model_path
+        os.environ['GAZEBO_MODEL_PATH'] += ':' + turtlebot_models + ':' + my_models_path
     else:
-        os.environ['GAZEBO_MODEL_PATH'] = model_path
+        os.environ['GAZEBO_MODEL_PATH'] = turtlebot_models + ':' + my_models_path
+    
+    # ------------------------------------------------------------
 
     # Argumentos de configuración
-    # Asegúrate de que el nombre aquí coincide con tu archivo real (f1f3.world o f1l3.world)
     world_file_arg = LaunchConfiguration('world_file', default='f1f3.world')
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    
-
 
     # Ruta al archivo del mundo
     world = PathJoinSubstitution([
@@ -49,15 +54,13 @@ def generate_launch_description():
         launch_arguments={'world': world}.items()
     )
 
-    # Publicador de estado del robot (Lee el URDF del Waffle)
+    # Publicador de estado del robot
     robot_state_publisher = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_turtlebot3_gazebo, 'launch', 'robot_state_publisher.launch.py')
         ),
         launch_arguments={'use_sim_time': use_sim_time}.items()
     )
-
-
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -70,20 +73,18 @@ def generate_launch_description():
             default_value='f1f3.world', 
             description='Name of the world file located in the package worlds/ directory'),
 
-
-
         gazebo,
-    robot_state_publisher,
-    
-    Node(
-        package='gazebo_ros',
-        executable='spawn_entity.py',
-        arguments=['-database', 'turtlebot3_waffle',
-                   '-entity', 'turtlebot3_waffle',
-                   '-x', '-9.0',
-                   '-y', '-4.0',
-                   '-z', '0.01'],
-        output='screen'
-    ),
-
+        robot_state_publisher,
+        
+        # TU CONFIGURACIÓN ORIGINAL DEL ROBOT (INTACTA)
+        Node(
+            package='gazebo_ros',
+            executable='spawn_entity.py',
+            arguments=['-database', 'turtlebot3_waffle',
+                       '-entity', 'turtlebot3_waffle',
+                       '-x', '-9.0',
+                       '-y', '-4.0',
+                       '-z', '0.01'],
+            output='screen'
+        ),
     ])

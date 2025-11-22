@@ -4,6 +4,16 @@ from glob import glob
 
 package_name = 'g12_prii3_nav_turtlebot'
 
+def package_files(directory_list):
+    paths = []
+    for directory in directory_list:
+        for (path, directories, filenames) in os.walk(directory):
+            for filename in filenames:
+                file_path = os.path.join(path, filename)
+                install_path = os.path.join('share', package_name, path)
+                paths.append((install_path, [file_path]))
+    return paths
+
 setup(
     name=package_name,
     version='0.0.0',
@@ -18,7 +28,7 @@ setup(
         
         # LÍNEA MODIFICADA: Asegura que todos los ficheros .py de la carpeta launch/ se copien
         (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
-    ],
+    ] + package_files(['models']),
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='isaac',
