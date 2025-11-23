@@ -132,7 +132,11 @@ def main():
     # 1. Ir a la puerta
     print(f"🚀 Yendo a la puerta ({COORD_PUERTA['x']}, {COORD_PUERTA['y']})...")
     pose_lectura = create_pose(aruco_node, COORD_PUERTA['x'], COORD_PUERTA['y'], COORD_PUERTA['w'])
-    nav.goToPose(pose_lectura)
+    
+    # Bucle de reintento por si Nav2 rechaza la meta (ej. falta Initial Pose)
+    while not nav.goToPose(pose_lectura):
+        print("❌ Meta rechazada. ¿Has dado la posición inicial en RViz? Reintentando en 3s...")
+        time.sleep(3.0)
 
     while not nav.isTaskComplete():
         pass 

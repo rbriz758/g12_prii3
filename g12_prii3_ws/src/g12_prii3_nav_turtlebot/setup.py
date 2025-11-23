@@ -28,7 +28,7 @@ setup(
         
         # LÍNEA MODIFICADA: Asegura que todos los ficheros .py de la carpeta launch/ se copien
         (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
-    ] + package_files(['models']),
+    ] + package_files(['models', 'maps']),
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='isaac',
@@ -38,6 +38,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'autonomous_navigation = g12_prii3_nav_turtlebot.autonomous_navigation:main',
+            'predefined_nav = g12_prii3_nav_turtlebot.predefined_nav_node:main',
         ],
     },
 )
