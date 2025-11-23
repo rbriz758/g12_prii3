@@ -115,7 +115,7 @@ def main():
     nav = SimpleNavigator(aruco_node) 
 
     # =========================================================
-    # 📍 TUS COORDENADAS REALES (Actualizadas)
+    # TUS COORDENADAS REALES (Actualizadas)
     # =========================================================
     
     # Puerta (Donde lee)
@@ -130,19 +130,19 @@ def main():
     nav.waitUntilNav2Active()
 
     # 1. Ir a la puerta
-    print(f"🚀 Yendo a la puerta ({COORD_PUERTA['x']}, {COORD_PUERTA['y']})...")
+    print(f"Yendo a la puerta ({COORD_PUERTA['x']}, {COORD_PUERTA['y']})...")
     pose_lectura = create_pose(aruco_node, COORD_PUERTA['x'], COORD_PUERTA['y'], COORD_PUERTA['w'])
     
     # Bucle de reintento por si Nav2 rechaza la meta (ej. falta Initial Pose)
     while not nav.goToPose(pose_lectura):
-        print("❌ Meta rechazada. ¿Has dado la posición inicial en RViz? Reintentando en 3s...")
+        print("Meta rechazada. ¿Has dado la posición inicial en RViz? Reintentando en 3s...")
         time.sleep(3.0)
 
     while not nav.isTaskComplete():
         pass 
 
     # 2. Esperar a ver ArUco
-    print("👀 Llegué. Buscando código...")
+    print("Llegué. Buscando código...")
     id_final = None
     
     contador_debug = 0
@@ -151,7 +151,7 @@ def main():
         
         if aruco_node.last_id is not None:
             id_final = aruco_node.last_id
-            print(f"\n✅ ¡DETECTADO ID: {id_final}!")
+            print(f"\n¡DETECTADO ID: {id_final}!")
             break
         
         contador_debug += 1
@@ -164,30 +164,30 @@ def main():
     
     if id_final == 5: 
         coords_destino = POSICION_1
-        print("➡️ ID 5 -> Destino: POSICION 1")
+        print("ID 5 -> Destino: POSICION 1")
         
     elif id_final == 17: 
         coords_destino = POSICION_2
-        print("➡️ ID 17 -> Destino: POSICION 2")
+        print("ID 17 -> Destino: POSICION 2")
         
     elif id_final == 6: 
         coords_destino = POSICION_3
-        print("➡️ ID 6 -> Destino: POSICION 3")
+        print("ID 6 -> Destino: POSICION 3")
         
     else:
-        print(f"⚠️ ID {id_final} no está en la lista (5, 17, 6). Me quedo aquí.")
+        print(f"ID {id_final} no está en la lista (5, 17, 6). Me quedo aquí.")
         rclpy.shutdown()
         return
 
     # 4. Navegar
-    print(f"🚀 Navegando al destino...")
+    print(f"Navegando al destino...")
     pose_final = create_pose(aruco_node, coords_destino['x'], coords_destino['y'], coords_destino['w'])
     nav.goToPose(pose_final)
     
     while not nav.isTaskComplete():
         pass
 
-    print("🏁 Misión cumplida.")
+    print("Misión cumplida.")
     rclpy.shutdown()
 
 if __name__ == '__main__':
