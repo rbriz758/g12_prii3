@@ -1,0 +1,18 @@
+
+
+export TURTLEBOT3_MODEL=waffle
+source install/setup.bash
+colcon build
+
+Mundo gazebo F1L3:
+ros2 launch g12_prii3_nav_turtlebot f1l3_world.launch.py
+
+RVIZ:
+ros2 launch turtlebot3_navigation2 navigation2.launch.py map:=src/g12_prii3_nav_turtlebot/maps/map.yaml
+
+
+
+
+
+Piloto automatico detector de Orucos
+python3 src/g12_prii3_nav_turtlebot/g12_prii3_nav_turtlebot/autonomous_navigation.py
