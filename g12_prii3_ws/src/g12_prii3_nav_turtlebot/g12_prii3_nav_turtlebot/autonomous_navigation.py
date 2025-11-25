@@ -125,6 +125,9 @@ def main():
     POSICION_1 = {'x': 6.329,  'y': 7.678,   'w': 1.0} 
     POSICION_2 = {'x': 13.155, 'y': 15.256,  'w': 1.0} 
     POSICION_3 = {'x': 6.375,  'y': 15.157,  'w': 1.0} 
+    
+    # Puntos intermedios para Ruta 2 y 3
+    INTERMEDIO_3 = {'x': 12.111, 'y': 15.198, 'w': 1.0}
     # =========================================================
 
     nav.waitUntilNav2Active()
@@ -160,19 +163,19 @@ def main():
     print("") 
 
     # 3. Seleccionar destino según TUS IDs
-    coords_destino = None
+    ruta_waypoints = []
     
     if id_final == 5: 
-        coords_destino = POSICION_1
+        ruta_waypoints = [POSICION_1]
         print("ID 5 -> Destino: POSICION 1")
         
     elif id_final == 17: 
-        coords_destino = POSICION_2
-        print("ID 17 -> Destino: POSICION 2")
+        ruta_waypoints = [INTERMEDIO_3, POSICION_2]
+        print("ID 17 -> Destino: POSICION 2 (con intermediario)")
         
     elif id_final == 6: 
-        coords_destino = POSICION_3
-        print("ID 6 -> Destino: POSICION 3")
+        ruta_waypoints = [INTERMEDIO_3, POSICION_3]
+        print("ID 6 -> Destino: POSICION 3 (con intermediario)")
         
     else:
         print(f"ID {id_final} no está en la lista (5, 17, 6). Me quedo aquí.")
@@ -180,12 +183,13 @@ def main():
         return
 
     # 4. Navegar
-    print(f"Navegando al destino...")
-    pose_final = create_pose(aruco_node, coords_destino['x'], coords_destino['y'], coords_destino['w'])
-    nav.goToPose(pose_final)
-    
-    while not nav.isTaskComplete():
-        pass
+    print(f"Navegando ruta con {len(ruta_waypoints)} puntos...")
+    for i, pt in enumerate(ruta_waypoints):
+        print(f"Yendo al punto {i+1}/{len(ruta_waypoints)}: ({pt['x']}, {pt['y']})...")
+        pose_pt = create_pose(aruco_node, pt['x'], pt['y'], pt['w'])
+        nav.goToPose(pose_pt)
+        while not nav.isTaskComplete():
+            pass
 
     print("Misión cumplida.")
     rclpy.shutdown()
