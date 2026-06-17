@@ -1,0 +1,75 @@
+[0.885s] Invoking command in '/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot': PYTHONPATH=/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/g12_prii3_nav_turtlebot build --build-base /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/build install --record /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/install.log --install-scripts $base/lib/g12_prii3_nav_turtlebot --single-version-externally-managed install_data
+[1.160s] running egg_info
+[1.161s] creating build/g12_prii3_nav_turtlebot/g12_prii3_nav_turtlebot.egg-info
+[1.161s] writing build/g12_prii3_nav_turtlebot/g12_prii3_nav_turtlebot.egg-info/PKG-INFO
+[1.161s] writing dependency_links to build/g12_prii3_nav_turtlebot/g12_prii3_nav_turtlebot.egg-info/dependency_links.txt
+[1.161s] writing entry points to build/g12_prii3_nav_turtlebot/g12_prii3_nav_turtlebot.egg-info/entry_points.txt
+[1.162s] writing requirements to build/g12_prii3_nav_turtlebot/g12_prii3_nav_turtlebot.egg-info/requires.txt
+[1.162s] writing top-level names to build/g12_prii3_nav_turtlebot/g12_prii3_nav_turtlebot.egg-info/top_level.txt
+[1.165s] writing manifest file 'build/g12_prii3_nav_turtlebot/g12_prii3_nav_turtlebot.egg-info/SOURCES.txt'
+[1.207s] reading manifest file 'build/g12_prii3_nav_turtlebot/g12_prii3_nav_turtlebot.egg-info/SOURCES.txt'
+[1.208s] writing manifest file 'build/g12_prii3_nav_turtlebot/g12_prii3_nav_turtlebot.egg-info/SOURCES.txt'
+[1.208s] running build
+[1.208s] running build_py
+[1.209s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/build
+[1.209s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/build/lib
+[1.209s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/build/lib/g12_prii3_nav_turtlebot
+[1.209s] copying g12_prii3_nav_turtlebot/predefined_nav_node.py -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/build/lib/g12_prii3_nav_turtlebot
+[1.209s] copying g12_prii3_nav_turtlebot/__init__.py -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/build/lib/g12_prii3_nav_turtlebot
+[1.209s] copying g12_prii3_nav_turtlebot/autonomous_navigation.py -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/build/lib/g12_prii3_nav_turtlebot
+[1.209s] running install
+[1.210s] running install_lib
+[1.211s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/lib/python3.8/site-packages/g12_prii3_nav_turtlebot
+[1.211s] copying /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/build/lib/g12_prii3_nav_turtlebot/predefined_nav_node.py -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/lib/python3.8/site-packages/g12_prii3_nav_turtlebot
+[1.211s] copying /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/build/lib/g12_prii3_nav_turtlebot/__init__.py -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/lib/python3.8/site-packages/g12_prii3_nav_turtlebot
+[1.212s] copying /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/build/lib/g12_prii3_nav_turtlebot/autonomous_navigation.py -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/lib/python3.8/site-packages/g12_prii3_nav_turtlebot
+[1.212s] byte-compiling /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/lib/python3.8/site-packages/g12_prii3_nav_turtlebot/predefined_nav_node.py to predefined_nav_node.cpython-38.pyc
+[1.214s] byte-compiling /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/lib/python3.8/site-packages/g12_prii3_nav_turtlebot/__init__.py to __init__.cpython-38.pyc
+[1.214s] byte-compiling /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/lib/python3.8/site-packages/g12_prii3_nav_turtlebot/autonomous_navigation.py to autonomous_navigation.cpython-38.pyc
+[1.216s] running install_data
+[1.216s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/ament_index
+[1.216s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/ament_index/resource_index
+[1.216s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/ament_index/resource_index/packages
+[1.217s] copying resource/g12_prii3_nav_turtlebot -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/ament_index/resource_index/packages
+[1.217s] copying package.xml -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot
+[1.217s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/worlds
+[1.217s] copying worlds/f1f3.world -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/worlds
+[1.217s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/launch
+[1.217s] copying launch/f1l3_world.launch.py -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/launch
+[1.217s] copying launch/project_launch.launch.py -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/launch
+[1.217s] copying launch/predefined_launch.launch.py -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/launch
+[1.217s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models
+[1.218s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_3
+[1.218s] copying models/ar_marker_3/model-1_4.sdf -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_3
+[1.218s] copying models/ar_marker_3/model-1_5.sdf -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_3
+[1.218s] copying models/ar_marker_3/model.config -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_3
+[1.218s] copying models/ar_marker_3/model.sdf -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_3
+[1.218s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_3/meshes
+[1.218s] copying models/ar_marker_3/meshes/Marker3.png -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_3/meshes
+[1.220s] copying models/ar_marker_3/meshes/Marker3.dae -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_3/meshes
+[1.221s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_1
+[1.221s] copying models/ar_marker_1/model-1_4.sdf -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_1
+[1.221s] copying models/ar_marker_1/model-1_5.sdf -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_1
+[1.221s] copying models/ar_marker_1/model.config -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_1
+[1.221s] copying models/ar_marker_1/model.sdf -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_1
+[1.221s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_1/meshes
+[1.221s] copying models/ar_marker_1/meshes/Marker1.png -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_1/meshes
+[1.224s] copying models/ar_marker_1/meshes/Marker1.dae -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_1/meshes
+[1.224s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_2
+[1.224s] copying models/ar_marker_2/model-1_4.sdf -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_2
+[1.224s] copying models/ar_marker_2/model-1_5.sdf -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_2
+[1.224s] copying models/ar_marker_2/model.config -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_2
+[1.224s] copying models/ar_marker_2/model.sdf -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_2
+[1.225s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_2/meshes
+[1.225s] copying models/ar_marker_2/meshes/Marker2.dae -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_2/meshes
+[1.225s] copying models/ar_marker_2/meshes/Marker2.png -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/models/ar_marker_2/meshes
+[1.228s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/maps
+[1.229s] copying maps/map.yaml -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/maps
+[1.229s] copying maps/map.pgm -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/share/g12_prii3_nav_turtlebot/maps
+[1.230s] running install_egg_info
+[1.232s] Copying build/g12_prii3_nav_turtlebot/g12_prii3_nav_turtlebot.egg-info to /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/lib/python3.8/site-packages/g12_prii3_nav_turtlebot-0.0.0-py3.8.egg-info
+[1.233s] running install_scripts
+[1.254s] Installing autonomous_navigation script to /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/lib/g12_prii3_nav_turtlebot
+[1.255s] Installing predefined_nav script to /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/lib/g12_prii3_nav_turtlebot
+[1.255s] writing list of installed files to '/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/install.log'
+[1.277s] Invoked command in '/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/install/g12_prii3_nav_turtlebot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/g12_prii3_nav_turtlebot build --build-base /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/build install --record /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_turtlebot/build/g12_prii3_nav_turtlebot/install.log --install-scripts $base/lib/g12_prii3_nav_turtlebot --single-version-externally-managed install_data

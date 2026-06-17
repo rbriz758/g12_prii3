@@ -1,0 +1,4 @@
+[console_scripts]
+autonomous_navigation = g12_prii3_nav_turtlebot.autonomous_navigation:main
+predefined_nav = g12_prii3_nav_turtlebot.predefined_nav_node:main
+

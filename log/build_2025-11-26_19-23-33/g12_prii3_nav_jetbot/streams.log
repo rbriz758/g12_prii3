@@ -1,0 +1,33 @@
+[2.076s] Invoking command in '/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_jetbot': PYTHONPATH=/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/build/g12_prii3_nav_jetbot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/install/g12_prii3_nav_jetbot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/g12_prii3_nav_jetbot build --build-base /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/build/g12_prii3_nav_jetbot/build install --record /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/build/g12_prii3_nav_jetbot/install.log --install-scripts $base/lib/g12_prii3_nav_jetbot --single-version-externally-managed install_data
+[2.368s] running egg_info
+[2.369s] creating ../../build/g12_prii3_nav_jetbot/g12_prii3_nav_jetbot.egg-info
+[2.369s] writing ../../build/g12_prii3_nav_jetbot/g12_prii3_nav_jetbot.egg-info/PKG-INFO
+[2.369s] writing dependency_links to ../../build/g12_prii3_nav_jetbot/g12_prii3_nav_jetbot.egg-info/dependency_links.txt
+[2.370s] writing entry points to ../../build/g12_prii3_nav_jetbot/g12_prii3_nav_jetbot.egg-info/entry_points.txt
+[2.370s] writing requirements to ../../build/g12_prii3_nav_jetbot/g12_prii3_nav_jetbot.egg-info/requires.txt
+[2.370s] writing top-level names to ../../build/g12_prii3_nav_jetbot/g12_prii3_nav_jetbot.egg-info/top_level.txt
+[2.371s] writing manifest file '../../build/g12_prii3_nav_jetbot/g12_prii3_nav_jetbot.egg-info/SOURCES.txt'
+[2.420s] reading manifest file '../../build/g12_prii3_nav_jetbot/g12_prii3_nav_jetbot.egg-info/SOURCES.txt'
+[2.421s] writing manifest file '../../build/g12_prii3_nav_jetbot/g12_prii3_nav_jetbot.egg-info/SOURCES.txt'
+[2.422s] running build
+[2.422s] running build_py
+[2.422s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/build/g12_prii3_nav_jetbot/build
+[2.422s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/build/g12_prii3_nav_jetbot/build/lib
+[2.422s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/build/g12_prii3_nav_jetbot/build/lib/g12_prii3_nav_jetbot
+[2.423s] copying g12_prii3_nav_jetbot/__init__.py -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/build/g12_prii3_nav_jetbot/build/lib/g12_prii3_nav_jetbot
+[2.423s] running install
+[2.424s] running install_lib
+[2.424s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/install/g12_prii3_nav_jetbot/lib/python3.8/site-packages/g12_prii3_nav_jetbot
+[2.424s] copying /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/build/g12_prii3_nav_jetbot/build/lib/g12_prii3_nav_jetbot/__init__.py -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/install/g12_prii3_nav_jetbot/lib/python3.8/site-packages/g12_prii3_nav_jetbot
+[2.425s] byte-compiling /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/install/g12_prii3_nav_jetbot/lib/python3.8/site-packages/g12_prii3_nav_jetbot/__init__.py to __init__.cpython-38.pyc
+[2.426s] running install_data
+[2.426s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/install/g12_prii3_nav_jetbot/share/ament_index
+[2.426s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/install/g12_prii3_nav_jetbot/share/ament_index/resource_index
+[2.427s] creating /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/install/g12_prii3_nav_jetbot/share/ament_index/resource_index/packages
+[2.427s] copying resource/g12_prii3_nav_jetbot -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/install/g12_prii3_nav_jetbot/share/ament_index/resource_index/packages
+[2.427s] copying package.xml -> /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/install/g12_prii3_nav_jetbot/share/g12_prii3_nav_jetbot
+[2.428s] running install_egg_info
+[2.429s] Copying ../../build/g12_prii3_nav_jetbot/g12_prii3_nav_jetbot.egg-info to /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/install/g12_prii3_nav_jetbot/lib/python3.8/site-packages/g12_prii3_nav_jetbot-0.0.0-py3.8.egg-info
+[2.430s] running install_scripts
+[2.454s] writing list of installed files to '/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/build/g12_prii3_nav_jetbot/install.log'
+[2.484s] Invoked command in '/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/src/g12_prii3_nav_jetbot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/build/g12_prii3_nav_jetbot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/install/g12_prii3_nav_jetbot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/g12_prii3_nav_jetbot build --build-base /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/build/g12_prii3_nav_jetbot/build install --record /home/rodrigo/Proyecto_III/g12_prii3/g12_prii3_ws/build/g12_prii3_nav_jetbot/install.log --install-scripts $base/lib/g12_prii3_nav_jetbot --single-version-externally-managed install_data
