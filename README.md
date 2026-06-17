@@ -1,66 +1,146 @@
-# Eurobot 2026 - Sistema Autónomo de Navegación y Manipulación
+# Proyecto III - Robótica Móvil (Grupo 12)
 
-Este repositorio contiene el código fuente y la arquitectura de control para un robot autónomo diseñado para la competición **Eurobot**. El proyecto integra navegación visual (siguelíneas), visión artificial para detección de objetivos, y manipulación física mediante un brazo robótico, todo orquestado bajo **ROS 2** y una **Máquina de Estados Finitos (FSM)**.
+![ROS 2](https://img.shields.io/badge/ROS_2-Humble-22314E?style=for-the-badge&logo=ros)
+![Python](https://img.shields.io/badge/Python-3.10-3776AB?style=for-the-badge&logo=python)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.x-5C3EE8?style=for-the-badge&logo=opencv)
 
-## Descripción del Proyecto
+Este repositorio alberga el código fuente y la documentación del proyecto anual de la asignatura **Proyecto III - Robótica Móvil**. El trabajo abarca desde la simulación cinemática básica hasta el despliegue de un sistema robótico autónomo distribuido, culminando en un prototipo físico para la competición **Eurobot 2026**.
 
-El objetivo principal de este proyecto es dotar a una plataforma móvil diferencial de autonomía completa para completar una misión estructurada que consiste en:
-1. **Navegar** por un circuito de competición siguiendo una línea negra sobre un fondo claro.
-2. **Detectar e identificar** un bloque específico mediante la lectura de marcadores **ArUco**.
-3. **Alinearse y recoger** el bloque de manera precisa usando un brazo robótico equipado con una ventosa neumática.
-4. **Continuar la navegación**, identificando intersecciones en el camino (cruces en "T").
-5. **Identificar visualmente** la zona de almacenamiento final (almacén de color verde).
-6. **Depositar** el bloque en la zona designada y concluir la misión.
+## Descripción General
 
-## Arquitectura y Stack Tecnológico
+El objetivo de este repositorio es documentar el progreso a lo largo de varios *sprints* de desarrollo. Iniciando con simuladores 2D (`turtlesim`), pasando por simuladores 3D (`Gazebo` con TurtleBot3) y finalizando con la integración en hardware real (Nvidia JetBot y una plataforma diferencial personalizada con brazo robótico).
 
-El cerebro del robot está implementado en el script principal de la FSM, desarrollado en **Python** sobre el middleware **ROS 2**.
+El proyecto integra:
+- **Navegación Autónoma:** Sistemas reactivos, seguimiento de trayectorias y uso del stack de navegación Nav2.
+- **Visión Artificial (OpenCV):** Detección de marcadores ArUco, seguimiento de líneas (siguelíneas cerrado por visión) y detección de color.
+- **Arquitecturas de Control:** Máquinas de Estados Finitos (FSM) y orquestación de nodos bajo **ROS 2**.
+- **Manipulación Física:** Control de brazos robóticos y actuadores neumáticos a través de puentes seriales (Arduino).
 
-- **ROS 2**: Gestión de la concurrencia, ciclo de vida del robot y publicación de trayectorias articulares (`/arm_controller/joint_trajectory`) para el movimiento del brazo.
-- **OpenCV (Visión Artificial)**: El pipeline procesa los fotogramas de la cámara cenital en tiempo real para:
-  - Binarización, filtrado morfológico y cálculo de momentos para el **seguimiento de línea** con control proporcional.
-  - Detección de marcadores empleando `cv2.aruco.ArucoDetector`.
-  - Filtrado geométrico y de color (espacio HSV) para la detección de cruces y zonas de almacenamiento.
-- **Hardware Integrado**:
-  - **Microcontrolador (Arduino)**: Actúa como puente serial (`/dev/ttyACM0`) para inyectar velocidades a los motores DC y controlar el relé de la ventosa neumática.
-  - **Brazo Robótico**: Controlado por serial a través de controladores USB (`/dev/ttyUSB0`, `/dev/ttyUSB1`).
-  - **Cámara V4L2**: Sensor principal para la percepción reactiva del entorno.
+---
 
-## Máquina de Estados Finitos (FSM)
+## Evolución del Proyecto (Sprints)
 
-El comportamiento del robot está estructurado de manera determinista usando una FSM con las siguientes fases:
+El repositorio está estructurado en distintos paquetes de ROS 2 que corresponden a las fases de aprendizaje y desarrollo de la asignatura:
 
-1. **`WAIT_START` & `INIT`**: Espera la confirmación humana de inicio, configura el hardware, coloca el brazo en posición de no oclusión y purga el sensor de la cámara para estabilizar el balance de blancos.
-2. **`SEARCH_ARUCO`**: El robot ejecuta su algoritmo de siguelíneas continuo hasta que detecta en el frame completo un marcador ArUco con el ID objetivo (ej. ID 36).
-3. **`ALIGN_GRAB`**: Una vez detectado el ArUco, el robot utiliza el área del contorno del marcador en la imagen para calcular la distancia y retroceder o avanzar hasta la posición de agarre perfecta.
-4. **`GRAB`**: Secuencia pre-calculada. El brazo desciende a las coordenadas articulares objetivo, activa la bomba de vacío (ventosa), y vuelve a subir asegurando la pieza.
-5. **`SEARCH_INTERSECTION`**: Se reanuda el siguelíneas (adaptando las velocidades para el transporte de carga). En paralelo, analiza un recorte geométrico de la derecha de la imagen para detectar una intersección perpendicular válida.
-6. **`TURN_RIGHT`**: Ejecuta una maniobra de giro diferencial a la derecha de 90 grados y re-encuentra la línea central.
-7. **`SEARCH_GREEN`**: Continúa navegando mientras aísla el espectro de color verde. Requiere múltiples frames de confirmación (`green_seen_count`) para asegurar que es la zona de descarga y no ruido del entorno.
-8. **`DROP` & `FINISHED`**: El robot avanza dentro de la zona de almacenamiento, desciende el brazo, apaga la ventosa liberando la presión, devuelve el brazo a una posición segura y detiene todos los sistemas.
+### Sprint 1: Introducción a ROS 2 (`g12_prii3_turtlesim`)
+Primer acercamiento a la creación de nodos, *topics* y *services*.
+- **Objetivo:** Dibujar el número "12" (número del grupo) utilizando la tortuga virtual.
+- **Características:** Implementación de servicios en tiempo real para controlar la ejecución (`/detener_dibujo`, `/reanudar_dibujo`, `/reiniciar_dibujo`).
 
-## Innovaciones Técnicas del Sistema
+### Sprint 2: Control Cinemático y Reactivo (`g12_prii3_move_turtlebot`, `g12_prii3_move_jetbot`)
+Traslado de la lógica de trayectorias a simuladores 3D y a un robot real.
+- **Objetivo:** Ejecutar la misma trayectoria ("12") pero añadiendo percepciones del entorno.
+- **Características:** 
+  - Trazado base en mundo vacío Gazebo (`draw_number_only.launch.py`).
+  - Supervisor de colisiones (`draw_and_collision.launch.py`).
+  - Controlador reactivo para esquivar obstáculos imprevistos (`draw_and_obstacle.launch.py`).
+  - Implementación replicada y probada físicamente en el robot **JetBot**.
 
-- **Fusión Sensorial Pura (Visión Reactiva):** El sistema no depende de costosos sensores LiDAR ni de odometría basada en encoders (la cual es propensa al deslizamiento). Toda la navegación se realiza por retroalimentación visual directa (`Closed-loop visual control`).
-- **Inmunidad al Ruido Visual:** Para evitar que el siguelíneas se desvíe por decoraciones oscuras o elementos del tablero, se utiliza el canal de Saturación (del espacio HSV) para enmascarar colores puros y centrarse estrictamente en el trazo negro.
-- **Alineamiento Basado en Área:** Se prescinde de cálculos complejos de pose 3D (PnP) para el acercamiento al ArUco, usando en su lugar un control de área de píxeles (`ALIGN_TARGET_AREA`) como estimador de profundidad.
+### Sprint 3: Navegación y Planificación (`g12_prii3_nav_turtlebot`)
+Implementación de navegación autónoma avanzada usando **Nav2** en un entorno simulado (Mundo Gazebo F1L3).
+- **Objetivo:** Navegar del punto de inicio a zonas objetivo tomando decisiones.
+- **Características:** 
+  - Piloto automático basado en la lectura de marcadores **ArUco** insertados en el entorno (determinan la ruta o la puerta a cruzar).
+  - Generación de trayectorias predefinidas.
+  - Orquestación del sistema mediante un archivo de lanzamiento integral (`project_launch.launch.py`).
 
-## Ejecución (One-Click Launch)
+### Calibración de Cámara (`Calibracion_camara`)
+Módulo independiente para asegurar la precisión de los algoritmos de visión.
+- Scripts en Python con OpenCV (`calibracion.py`, `rectificar_tablero.py`) para calcular los parámetros intrínsecos de la lente, obtener la matriz de la cámara y eliminar la distorsión de las imágenes reales para operaciones métricas de precisión.
 
-El proyecto incluye un archivo *launch* de ROS 2 que inicializa todo el hardware y software simultáneamente.
+### Sprint Final: Eurobot 2026 (Plataforma Autónoma de Manipulación)
+El hito definitivo del proyecto. Unifica los conocimientos previos en una plataforma móvil diferencial real equipada con cámara V4L2, brazo robótico y ventosa neumática controlada por una **FSM**.
 
+**Misión implementada:**
+1. Navegación guiada por **siguelíneas** (visión BGR-HSV) inmune a ruidos visuales o decoraciones del circuito.
+2. Detección y alineamiento dinámico basado en el área de los marcadores ArUco.
+3. Maniobra de **manipulación y agarre** de la pieza con el brazo robótico y encendido de ventosa neumática.
+4. Identificación visual de cruces en el trazado (intersecciones en T) y zonas de almacenaje (aislamiento de color verde).
+5. Descarga de la pieza y finalización segura de la misión.
+
+---
+
+## Stack Tecnológico
+
+- **Middleware:** ROS 2 (Humble / Iron)
+- **Lenguaje:** Python 3.10
+- **Simulación:** Gazebo Classic (TurtleBot3 Model)
+- **Visión y Percepción:** OpenCV (cv2) y cv-bridge
+- **Hardware Integrado (Fase Final):** 
+  - Plataforma Nvidia JetBot
+  - Microcontroladores Arduino (Puente serial `/dev/ttyACM0`)
+  - Brazo Robótico Serial (`/dev/ttyUSB0`, `/dev/ttyUSB1`)
+  - Cámara V4L2
+
+---
+
+## Instalación y Configuración
+
+**Requisitos Previos:**
+- SO: Ubuntu 22.04
+- ROS 2 instalado y debidamente configurado.
+- `colcon` para la construcción del workspace.
+
+**Pasos de Instalación:**
 ```bash
-# 1. Dar permisos a los controladores físicos
+# 1. Clonar el repositorio
+git clone https://github.com/rbriz758/g12_prii3.git
+cd g12_prii3
+
+# 2. Compilar el workspace completo
+colcon build
+
+# 3. Cargar las variables de entorno generadas
+source install/setup.bash
+```
+
+> **Nota para Simulaciones:** Asegúrate de exportar el modelo del TurtleBot3 antes de lanzar los entornos de Gazebo. Puedes hacerlo con `export TURTLEBOT3_MODEL=waffle` (o `burger`).
+
+---
+
+## Instrucciones de Uso Rápido
+
+A continuación se muestran ejemplos directos de cómo lanzar los distintos apartados del proyecto:
+
+### 1. Turtlesim (Servicios)
+```bash
+ros2 launch g12_prii3_turtlesim mover_tortuga.launch.py
+```
+*(Puedes usar el comando `ros2 service call /detener_dibujo std_srvs/srv/Trigger` o `/reanudar_dibujo` para pausar/reanudar el trazado).*
+
+### 2. Turtlebot (Navegación reactiva ante obstáculos)
+```bash
+export TURTLEBOT3_MODEL=burger
+ros2 launch g12_prii3_move_turtlebot draw_and_obstacle.launch.py
+```
+*(Para probar los sensores, se debe colocar un objeto en forma de cubo dentro del trazado en Gazebo).*
+
+### 3. Navegación Nav2 con Lógica ArUco
+```bash
+export TURTLEBOT3_MODEL=waffle
+ros2 launch g12_prii3_nav_turtlebot project_launch.launch.py
+```
+
+### 4. Demostración Física Eurobot (Hardware)
+```bash
+# 1. Otorgar permisos a los controladores físicos y linkear puertos seriales
 sudo chmod 777 /dev/ttyACM0 /dev/ttyUSB0 /dev/ttyUSB1
 sudo ln -sf /dev/ttyUSB0 /dev/ttyUSB1
 
-# 2. Cargar los workspaces (Chasis, Brazo y Proyecto)
+# 2. Asegurarse de tener el entorno cargado (Chasis, Brazo y Proyecto)
 source ~/robot_ws/install/setup.bash
 source ~/brazo_ws/install/setup.bash
 source install/setup.bash
 
-# 3. Lanzar la demostración
+# 3. Lanzar la orquestación integral (FSM + Hardware Drivers)
 ros2 launch sprint8_eurobot sprint8_launch.py
 ```
+*Una vez lanzado, espera el mensaje de inicialización en la terminal, verifica las ventanas de debug visual (OpenCV), posiciona el robot y **presiona ENTER** en la terminal principal para dar comienzo a la demostración autónoma.*
 
-Una vez ejecutado, espera el mensaje de inicialización en la terminal, verifica que las ventanas de debug visual (OpenCV) aparecen, posiciona el robot y **presiona ENTER** para iniciar la demostración autónoma.
+---
+
+## Acerca del Equipo
+
+> **Equipo de Desarrollo:** Grupo 12 ([rbriz758/g12_prii3](https://github.com/rbriz758/g12_prii3))  
+> **Contexto:** Trabajo de la asignatura anual centrado en el diseño algorítmico, simulación en Gazebo e integración física final de un sistema robótico distribuido bajo ROS 2.  
+> **Áreas de Trabajo:** Visión artificial, Cinemática diferencial, Control embebido, Máquinas de estados, Control reactivo.
