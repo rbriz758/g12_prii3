@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🤖 Proyecto Eurobot: Navegación Autónoma ROS 2 (g12_prii3)</h1>
+  <h1>Proyecto Eurobot: Navegación Autónoma ROS 2 (g12_prii3)</h1>
 
   <p>
     <strong>Sistema multi-robot autónomo basado en ROS 2 con Navegación por Máquina de Estados (FSM), Visión Artificial (ArUco) e integración de Hardware.</strong>
@@ -18,11 +18,11 @@
 
 <br>
 
-## 📝 Descripción del Proyecto
+## Descripción del Proyecto
 
 Este repositorio documenta el desarrollo y progresión de un proyecto de robótica para crear un **Eurobot Autónomo**, divido en sprints de desarrollo que abarcan desde el aprendizaje básico con **Turtlesim**, la implementación en el entorno de simulación **Gazebo** con control de colisiones, hasta la navegación final, integración hardware de **TurtleBot3** y **NVIDIA JetBot**, y despliegue de **Visión por Computadora (Computer Vision)** mediante **Máquinas de Estados Finitos (FSM)**.
 
-### ✨ Características Principales:
+### Características Principales:
 - **Trazado de trayectorias complejas:** Capacidad de dibujar formas/números de manera parametrizable.
 - **Evitación de Colisiones (Collision Avoidance):** Controladores reactivos por Lidar (LaserScan).
 - **Navegación Autónoma (Nav2):** Mapeo y navegación autónoma en entornos simulados (Gazebo).
@@ -31,20 +31,20 @@ Este repositorio documenta el desarrollo y progresión de un proyecto de robóti
 
 ---
 
-## 📂 Estructura del Repositorio
+## Estructura del Repositorio
 
 El proyecto se divide en módulos ROS 2 específicos para diferentes tareas y robots:
 
-- 🐢 `g12_prii3_turtlesim`: Desarrollo inicial en el entorno 2D Turtlesim.
-- 🚗 `g12_prii3_move_turtlebot`: Lógica de trazado de formas y evitación de obstáculos reactiva para el TurtleBot3 (Gazebo).
-- 🚙 `g12_prii3_move_jetbot`: Adaptación y control de movimiento transferidos al hardware físico del NVIDIA JetBot.
-- 🗺️ `g12_prii3_nav_turtlebot`: Sistema de navegación (Nav2), creación de mapas, y despliegue de misiones y comportamiento FSM.
-- 📷 `Calibracion_camara`: Scripts Python basados en OpenCV para realizar la calibración intrínseca de la cámara y rectificación de imágenes.
-- 🏗️ `F1A1`: Modelos y entornos descriptivos (SDF/Config).
+- `g12_prii3_turtlesim`: Desarrollo inicial en el entorno 2D Turtlesim.
+- `g12_prii3_move_turtlebot`: Lógica de trazado de formas y evitación de obstáculos reactiva para el TurtleBot3 (Gazebo).
+- `g12_prii3_move_jetbot`: Adaptación y control de movimiento transferidos al hardware físico del NVIDIA JetBot.
+- `g12_prii3_nav_turtlebot`: Sistema de navegación (Nav2), creación de mapas, y despliegue de misiones y comportamiento FSM.
+- `Calibracion_camara`: Scripts Python basados en OpenCV para realizar la calibración intrínseca de la cámara y rectificación de imágenes.
+- `F1A1`: Modelos y entornos descriptivos (SDF/Config).
 
 ---
 
-## ⚙️ Requisitos Previos
+## Requisitos Previos
 
 - Sistema Operativo: **Ubuntu** (Compatible con ROS 2 Humble/Foxy)
 - Instalación base de **ROS 2** configurada (`source /opt/ros/<distro>/setup.bash`)
@@ -54,7 +54,7 @@ El proyecto se divide en módulos ROS 2 específicos para diferentes tareas y ro
 
 ---
 
-## 🚀 Instalación y Compilación
+## Instalación y Compilación
 
 1. **Clonar el repositorio:**
    ```bash
@@ -75,7 +75,7 @@ El proyecto se divide en módulos ROS 2 específicos para diferentes tareas y ro
 
 ---
 
-## 🛠️ Modos de Ejecución (Sprints y Fases)
+## Modos de Ejecución (Sprints y Fases)
 
 ### 1. Turtlesim (Comportamiento Básico)
 Lanza el nodo inicial de Turtlesim capaz de trazar trayectorias programadas.
@@ -134,5 +134,5 @@ ros2 launch g12_prii3_move_jetbot draw_number.launch.py
 
 ---
 
-## 🤝 Autor / Contribuciones
-Proyecto universitario para la asignatura Proyecto III. Desarrollado y mantenido por **[rbriz758](https://github.com/rbriz758)** y colaboradores.
+## Autor / Contribuciones
+Proyecto universitario para la asignatura Proyecto III. Desarrollado y mantenido por **[rbriz758](https://github.com/rbriz758)** e **[IsaacPerezMascaro8](https://github.com/IsaacPerezMascaro8)**.
